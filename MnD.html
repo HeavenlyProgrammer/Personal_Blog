@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Multiplexer & Demultiplexer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        article {
+            background: #fff;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .highlight {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .img-placeholder {
+            background-color: #ddd;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Elektronika Digital Dasar</h1>
+    <p>Mengenal komponen penting dalam sistem logika digital</p>
+</header>
+
+<article>
+
+    <h2>Apa itu Multiplexer (MUX)?</h2>
+    <p>
+        Multiplexer atau sering disingkat <strong>MUX</strong> adalah rangkaian logika kombinasional
+        yang berfungsi untuk <strong>memilih satu data input dari beberapa input</strong> yang tersedia,
+        lalu meneruskannya ke <strong>satu jalur output</strong>.
+    </p>
+
+    <p>
+        Dalam sistem digital, MUX sering digunakan ketika banyak sumber data harus berbagi
+        satu jalur pengiriman. Dengan adanya multiplexer, sistem menjadi lebih efisien
+        karena tidak memerlukan banyak kabel atau jalur output.
+    </p>
+
+    <div class="highlight">
+        <strong>Konsep Utama Multiplexer:</strong><br>
+        Many to One (Banyak Input ke Satu Output)
+    </div>
+
+    <div class="img-placeholder">[Diagram Blok Multiplexer]</div>
+
+    <p>
+        Pemilihan input yang akan diteruskan ke output dikendalikan oleh
+        <em>select line</em> atau jalur selektor.
+        Kombinasi logika pada select line inilah yang menentukan input mana
+        yang sedang aktif.
+    </p>
+
+    <p>
+        Contohnya, pada MUX 4:1 terdapat 4 input data, 2 select line, dan 1 output.
+        Setiap kombinasi select line akan memilih satu input tertentu.
+    </p>
+
+    <h2>Apa itu Demultiplexer (DEMUX)?</h2>
+    <p>
+        Demultiplexer atau <strong>DEMUX</strong> merupakan kebalikan dari multiplexer.
+        Rangkaian ini berfungsi untuk <strong>mendistribusikan satu data input</strong>
+        ke salah satu dari banyak jalur output.
+    </p>
+
+    <p>
+        Demultiplexer sering digunakan ketika satu sumber data perlu dikirim
+        ke beberapa tujuan yang berbeda, namun hanya satu tujuan yang aktif
+        dalam satu waktu.
+    </p>
+
+    <div class="highlight">
+        <strong>Konsep Utama Demultiplexer:</strong><br>
+        One to Many (Satu Input ke Banyak Output)
+    </div>
+
+    <div class="img-placeholder">[Diagram Blok Demultiplexer]</div>
+
+    <p>
+        Sama seperti MUX, DEMUX juga menggunakan <em>select line</em>
+        untuk menentukan output mana yang akan menerima data.
+        Output yang tidak dipilih akan berada pada kondisi tidak aktif.
+    </p>
+
+    <h2>Perbedaan Multiplexer dan Demultiplexer</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Aspek</th>
+                <th>Multiplexer (MUX)</th>
+                <th>Demultiplexer (DEMUX)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fungsi Utama</td>
+                <td>Memilih satu data dari banyak input</td>
+                <td>Mendistribusikan data ke salah satu output</td>
+            </tr>
+            <tr>
+                <td>Arah Aliran Data</td>
+                <td>Banyak Input → Satu Output</td>
+                <td>Satu Input → Banyak Output</td>
+            </tr>
+            <tr>
+                <td>Peran Select Line</td>
+                <td>Menentukan input yang aktif</td>
+                <td>Menentukan output yang aktif</td>
+            </tr>
+            <tr>
+                <td>Contoh Aplikasi</td>
+                <td>Penghematan jalur data</td>
+                <td>Distribusi sinyal</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Kesimpulan</h2>
+    <p>
+        Multiplexer dan demultiplexer merupakan komponen dasar yang sangat penting
+        dalam elektronika digital. MUX berperan sebagai pemilih data,
+        sedangkan DEMUX bertugas sebagai pendistribusi data.
+    </p>
+
+    <p>
+        Pemahaman yang baik terhadap kedua rangkaian ini akan memudahkan
+        dalam mempelajari sistem komputer, komunikasi data,
+        serta perancangan rangkaian digital yang lebih kompleks.
+    </p>
+
+</article>
+
+<footer>
+    <p>&copy; 2024 Blog Elektronika Digital • Dibuat untuk pembelajaran</p>
+</footer>
+
+</body>
+</html>
